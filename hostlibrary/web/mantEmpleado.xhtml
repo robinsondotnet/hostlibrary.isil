@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+       xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Empleados</title>
+    </h:head>
+    <h:body>
+      <ui:composition template="./plantilla/PlantillaGeneral.xhtml">
+        <ui:define name="content">     
+        <h:form>
+            <h1>Empleados</h1>
+            
+            <br/>
+            
+            DNI: <h:inputText id="txtDni" value="#{empleadoController.empleado.dni}"
+                                required="true" requiredMessage="Obligatorio"/>
+                <h:message for="txtDni" style="color: red"/>
+           <br/>
+           
+           Nombre: <h:inputText id="txtNombre" value="#{empleadoController.empleado.nombre}"
+                                required="true" requiredMessage="Obligatorio"/>
+                <h:message for="txtNombre" style="color: red"/>
+            <br/>
+                
+           Apellido:<h:inputText id="txtApellido" value="#{empleadoController.empleado.apellido}"
+                            required="true" requiredMessage="Obligatorio"/>
+            <h:message for="txtApellido" style="color: red"/>
+           <br/>
+           
+           Direccion:<h:inputText id="txtDireccion" value="#{empleadoController.empleado.direccion}"
+                                required="true" requiredMessage="Obligatorio"/>
+                <h:message for="txtDireccion" style="color: red"/>
+           <br/>
+           
+           Fecha Nacimiento:
+           <h:inputText id="txtFechaNacimiento" value="#{empleadoController.empleado.fecNacimiento}" >
+		<f:convertDateTime pattern="d-M-yyyy" />
+	    </h:inputText>
+                <h:message for="txtFechaNacimiento" style="color: red"/>
+           <br/>
+           
+           ID Cargo: <h:inputText id="txtCargo" value="#{empleadoController.empleado.idCargo}"
+                                required="true" requiredMessage="Obligatorio"/>
+                <h:message for="txtCargo" style="color: red"/>
+           <br/>
+           
+           ID Tienda: <h:inputText id="txtTienda" value="#{empleadoController.empleado.idTienda}"
+                                required="true" requiredMessage="Obligatorio"/>
+                <h:message for="txtTienda" style="color: red"/>
+           <br/>
+           
+           Remuneracion: <h:inputText id="txtRemuneracion" value="#{empleadoController.empleado.remuneracion}"
+                                required="true" requiredMessage="Obligatorio"/>
+                <h:message for="txtRemuneracion" style="color: red"/>
+           <br/>
+          
+           Fecha Inicio:
+           <h:inputText id="txtFechaInicio" value="#{empleadoController.empleado.fecInicio}" >
+		<f:convertDateTime pattern="d-M-yyyy" />
+	    </h:inputText>
+                <h:message for="txtFechaInicio" style="color: red"/>
+           <br/>
+          
+           Fecha Cese:
+           <h:inputText id="txtFechaCese" value="#{empleadoController.empleado.fecCese}" >
+		<f:convertDateTime pattern="d-M-yyyy" />
+	    </h:inputText>
+                <h:message for="txtFechaCese" style="color: red"/>
+           <br/>
+ 
+            <h:commandButton value="Grabar" action="#{empleadoController.create()}"/>
+            <br/>
+            
+                <br/>
+                <p:dataTable value="#{empleadoController.lstEmpleado}" var="objEmpleado"
+                 paginator="true" rows="10"
+                 paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                 rowsPerPageTemplate="5,10,15">
+                    <p:column>
+                        <!-- column head -->
+                        <f:facet name="codigo">Id:</f:facet>
+                        #{objEmpleado.idEmpleado}
+                    </p:column>
+                    <p:column>
+                        <!-- column head -->
+                        <f:facet name="dni">DNI</f:facet>
+                        <h:inputText value="#{objEmpleado.dni}"/>
+                    </p:column>
+                    <p:column>
+                        <!-- column head -->
+                        <f:facet name="nombre">Nombre</f:facet>
+                        <h:inputText value="#{objEmpleado.nombre}"/>
+                    </p:column>
+                    <p:column>
+                        <!-- column head -->
+                        <f:facet name="apellido">Apellido</f:facet>
+                        <h:inputText value="#{objEmpleado.apellido}"/>
+                    </p:column>
+                    <p:column>
+                        <!-- column head -->
+                        <f:facet name="direccion">Direccion</f:facet>
+                        <h:inputText value="#{objEmpleado.direccion}"/>
+                    </p:column>
+                    
+                    <p:column>
+                        <!-- column head -->
+                        <f:facet name="fecNacimiento">Fecha Nacimiento</f:facet>
+                        <h:inputText value="#{objEmpleado.fecNacimiento}">
+                            <f:convertDateTime pattern="d-M-yyyy" />
+                        </h:inputText>
+                    </p:column>        
+                    
+                    <p:column>
+                        <!-- column head -->
+                        <f:facet name="cargo">Cargo</f:facet>
+                        <h:inputText value="#{objEmpleado.idCargo}"/>
+                    </p:column>
+                    
+                    <p:column>
+                        <!-- column head -->
+                        <f:facet name="tienda">Tienda</f:facet>
+                        <h:inputText value="#{objEmpleado.idTienda}"/>
+                    </p:column>
+                    <p:column>
+                        <!-- column head -->
+                        <f:facet name="remuneracion">Remuneracion</f:facet>
+                        <h:inputText value="#{objEmpleado.remuneracion}"/>
+                    </p:column>
+                     <p:column>
+                        <!-- column head -->
+                        <f:facet name="fecInicio">Fecha Inicio</f:facet>
+                        <h:inputText value="#{objEmpleado.fecInicio}">
+                            <f:convertDateTime pattern="d-M-yyyy" />
+                        </h:inputText>
+                    </p:column>
+                     <p:column>
+                        <!-- column head -->
+                        <f:facet name="fecCese">Fecha Cese</f:facet>
+                        <h:inputText value="#{objEmpleado.fecCese}">
+                            <f:convertDateTime pattern="d-M-yyyy" />
+                        </h:inputText>
+                    </p:column>
+                    
+                    <p:column>
+                        <!-- column head -->
+                        <f:facet name="accion1">Eliminar</f:facet>
+                        <h:commandButton value="Eliminar" action="#{empleadoController.delete(objEmpleado)}"/>
+                    </p:column>
+                    <p:column>
+                        <!-- column head -->
+                        <f:facet name="accion2">Actualizar</f:facet>
+                        <h:commandButton value="Actualizar" action="#{empleadoController.update(objEmpleado)}"/>
+                    </p:column>
+                </p:dataTable>
+        </h:form>
+              <h:form>
+                  <p:pieChart value="#{vistaVentas.pieModel}"
+                        legendPosition="w"
+                        title="Ventas por empleado"
+                        />
+                    </h:form>
+      </ui:define>
+     </ui:composition>  
+    </h:body>
+</html>

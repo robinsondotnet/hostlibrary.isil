@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Editorial</title>
+    </h:head>
+    <h:body>
+     <ui:composition template="./plantilla/PlantillaGeneral.xhtml">
+       <ui:define name="content"> 
+        <h:form>
+            <h1>Editorial</h1>
+            
+            <br/>
+            RUC:<h:inputText id="txtRuc" value="#{publicadorController.publicador.ruc}"
+                                required="true" requiredMessage="Obligatorio"/>
+                <h:message for="txtRuc" style="color: red"/>
+           <br/>
+           RAZON SOCIAL: <h:inputText id="txtRazSocial" value="#{publicadorController.publicador.razSocial}"
+                                required="true" requiredMessage="Obligatorio"/>
+            <h:message for="txtRazSocial" style="color: red"/><br/>
+            
+            TELEFONO:<h:inputText id="txtTelefono" value="#{publicadorController.publicador.telefono}"
+                        required="true" requiredMessage="Obligatorio"/>
+            <h:message for="txtTelefono" style="color: red"/>
+
+            <h:commandButton value="Grabar" action="#{publicadorController.create()}"/>
+            <br/>
+                
+                <br/>
+                <h:dataTable value="#{publicadorController.lstPublicador}" var="objPublicador">
+                    <h:column>
+                        <!-- column head -->
+                        <f:facet name="codigo">ID</f:facet>
+                        #{objPublicador.idPublicador}
+                    </h:column>
+                    <h:column>
+                        <!-- column head -->
+                        <f:facet name="ruc">RUC</f:facet>
+                        <h:inputText value="#{objPublicador.ruc}"/>
+                    </h:column>
+                    <h:column>
+                        <!-- column head -->
+                        <f:facet name="razSocial">Razon Social</f:facet>
+                        <h:inputText value="#{objPublicador.razSocial}"/>
+                    </h:column>
+                    <h:column>
+                        <!-- column head -->
+                        <f:facet name="telefono">Telefono</f:facet>
+                        <h:inputText value="#{objPublicador.telefono}"/>
+                    </h:column>
+                   
+                    <h:column>
+                        <!-- column head -->
+                        <f:facet name="accion1">Eliminar</f:facet>
+                        <h:commandButton value="Eliminar" action="#{publicadorController.delete(objPublicador)}"/>
+                    </h:column>
+                    <h:column>
+                        <!-- column head -->
+                        <f:facet name="accion2">Actualizar</f:facet>
+                        <h:commandButton value="Actualizar" action="#{publicadorController.update(objPublicador)}"/>
+                    </h:column>
+                </h:dataTable>
+        </h:form>
+        </ui:define>
+       </ui:composition>
+    </h:body>
+</html>

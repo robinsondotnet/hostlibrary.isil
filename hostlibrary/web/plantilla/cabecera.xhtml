@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+	<ui:composition>
+		<style type="text/css">
+			#div1{
+				width: 100%;
+			}
+		</style>
+		<h:form>
+			<div id="div1">
+				<table width="100%">
+					<tr>
+						<td>
+							<h:graphicImage value="./../img/logo.png" height="60" width="60"/>
+						</td>
+						<td align="right">
+                                                    <p>Usuario: <h:outputText id="us" value="#{usuarioController.user}" /> </p>
+							<p> <h:commandLink value="Salir" action="#{ventaBean.doSalir}"/> </p>
+						</td>
+					</tr>
+				</table>
+			</div>
+                        
+                                
+                    <c:if test="#{usuarioController.user=='admin'}">    
+                                    <h:commandLink value="Ventas" action="ventas" /> &nbsp;
+                                    <h:commandLink value="Libros" action="mantLibro" /> &nbsp;
+                                    <h:commandLink value="Tienda" action="mantTienda" /> &nbsp;
+                                    <h:commandLink value="Editorial" action="mantPublicador" />&nbsp;
+                                    <h:commandLink value="Cargos" action="mantCargo" />&nbsp;
+                                    <h:commandLink value="Autores" action="mantAutor" />&nbsp;
+                                    <h:commandLink value="Empleado" action="mantEmpleado" />&nbsp;
+                                   
+                                </c:if> 
+                                <c:if test="#{usuarioController.user!='admin' and usuarioController.user!='Invitado'}">    
+                                    <h:commandLink value="Ventas" action="ventas" /> &nbsp;
+                                    <h:commandLink value="Libros" action="mantLibro" /> &nbsp;
+                                    
+                                </c:if> 
+                                <c:if test="#{usuarioController.user=='Invitado'}">  
+                                    
+                                    <h:commandLink value="Ventas" action="ventas" /> &nbsp;
+                                </c:if> 
+			<div id="div1">
+				
+                                
+			</div>
+		</h:form>
+	</ui:composition>
+
+</html>
+
