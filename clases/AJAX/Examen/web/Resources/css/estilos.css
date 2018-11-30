@@ -1,0 +1,282 @@
+@font-face  {
+    font-family: raleway;
+    src: url("../fonts/Raleway-Regular.ttf");
+}
+html, body{
+    font-family: "raleway";
+}
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+    outline: none;
+    outline-offset: -2px;
+}
+.input-group {
+    margin: 5px 0;
+}
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+    background-color: #f3f3f3;
+    opacity: 1;
+}
+.row {
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
+    border: 1px solid #0ab5ff;
+}
+.table-bordered {
+    border: 1px solid #0ab5ff;
+}
+table{
+    color: #000000;
+}
+/* login */
+.centrado {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.titulo_index {
+    margin-bottom: 30px;
+}
+.titulo_index h1 {
+    color: #0090ce;
+    text-align: center;
+}
+div#usuario_login, div#contra_login {
+    box-shadow: 2px 2px 4px #cecece;
+}
+div#usuario_login span, div#contra_login span {
+    border: 1px solid #0ab5ff;
+    background-color: #0ab5ff;
+    color: #ffffff;
+    border-radius: inherit;
+}
+div#usuario_login input, div#contra_login input {
+    border: 1px solid #0ab5ff;
+    border-radius: inherit;
+}
+.btn_login {
+    background-color: #f6653c;
+    border-radius: inherit;
+    box-shadow: 2px 2px 2px #cecece;
+    color: #ffffff;
+    border: 1px solid #f6653c;
+    transition: 0.5s;
+}
+.btn_login:hover {
+    transition: 0.5s;
+    background-color: #ffffff;
+    color: #f6653c;
+}
+a.olvide_cuenta {
+    text-decoration: underline;
+    color: #0ab5ff;
+}
+/* end login */
+
+/* navbar */
+.img_nav{
+    padding: 0 !important;
+}
+.img_nav img{
+    max-width: 50px;
+    max-height: 50px;
+}
+.img_nav i{
+    padding: 0 10px;
+}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+    background-color: inherit !important;
+    color: #ffffff;
+}
+.navbar-default .navbar-nav>li>a,
+.navbar-default .navbar-brand,
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover,
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover
+ {
+    color: #ffffff;
+}
+/* end navbar */
+
+/* navbar left */
+.list_menu a {
+    border-radius: inherit !important;
+    border: 1px solid #f6653c;
+    margin: 6px 0;
+    color: #f6653c;
+    transition: 0.5s;
+    box-shadow: 2px 2px 3px #9e9e9e;
+}
+.list_menu a:focus, .list_menu a:hover, .list_menu a {
+    background-color: inherit;
+}
+.list_menu a:before, .list_menu a.activate:before {
+    content: '\f046';
+    background-color: #f6653c !important;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    left: 0;
+    transition: 0.5s;
+    z-index: -1;
+    color: #fff;
+    font-family: FontAwesome;
+    line-height: 38px;
+    padding-left: 0;
+}
+.list_menu a:hover, .list_menu a.activate {
+    color: #fff;
+    padding-left: 30px;
+}
+.list_menu a:hover:before, .list_menu a.activate:before {
+    width: 100%;
+    padding-left: 12px;
+}
+/* end navbar left */
+
+/* ventas */
+.navbar-default {
+    background-color: #0ab5ff;
+    box-shadow: 0px 3px 6px #b5b5b5;
+    border: none;
+    border-radius: inherit;
+}
+.search_color input:focus{
+    border-color: #f6653c;
+    border-radius: inherit;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 4px rgba(255, 87, 34, 0.41);
+}
+.search_color input {
+    border-color: #f6653c;
+    border-radius: inherit;
+}
+.search_color span button {
+    line-height: 1.5;
+    border-color: #f6653c;
+    background: #f6653c;
+    border-radius: inherit;
+    color: #ffffff;
+}
+.input_color{
+    border-radius: inherit;
+    border-color: #0ab5ff;
+    line-height: 1;
+    height: 32px;
+}
+.group_venta {
+    background: #0ab5ff;
+    min-width: 100px;
+    color: #ffffff;
+    text-align: left;
+    border-radius: inherit;
+    border-color: #0ab5ff;
+}
+.precio_venta {
+    background: #ffffff;
+    text-align: center;
+    font-size: 2em;
+    color: #0ab5ff;
+    padding: 10px 0;
+    border: 2px solid #0ab5ff;
+}
+.numero_boleta {
+    text-align: center;
+}
+span.serie_venta {
+    font-size: 2em;
+    font-weight: bold;
+}
+span.numero_venta {
+    font-size: 2em;
+}
+.button_group {
+    margin-top: 20px;
+    text-align: center;
+}
+.button_group button {
+    border-radius: inherit;
+    border: none;
+    box-shadow: 2px 2px 2px #7b7b7b;
+    background: #f6653c;
+    color: #ffffff;
+    margin: 3px;
+    min-width: 170px;
+    padding: 3px 0;
+}
+.button_group button.active, .button_group button:active {
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+    box-shadow: 2px 2px 2px #7b7b7b;
+}
+.button_group button:hover, .search_color span button:hover, .search_color span button:focus, .search_color span button:active, 
+.search_color span button.focus, .search_color span button.active  {
+    background-color: #f83f0b;
+    color: #fff;
+}
+.button_group button.focus, .button_group button:focus{
+    color: #fff;
+}
+.group_acciones a {
+    color: #f6653c;
+    padding: 5px;
+}
+.group_acciones a:hover {
+    color: #0ab5ff;
+}
+/* fin ventas */
+
+/* configuracion */
+.input_logo{
+    position: relative;
+    width: 140px;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-top: 5px;
+    box-shadow: 2px 2px 2px #b5b5b5;
+}
+.input_logo label{
+    text-align: center;
+    border: 1px solid #0ab5ff;
+    padding: 5px 10px;
+    display: block;
+    margin: 0;
+    color: #0ab5ff;
+    cursor: pointer;
+}
+.input_logo input#logo_empresa {
+    background: #0d8dfc;
+    display: none;
+}
+/* fin configuracion */
+
+/* scroll-bar */
+
+::selection {
+  background: #0ab5ff;
+  color: #fff; }
+::-moz-selection {
+  background: #0ab5ff;
+  color: #fff; }
+
+::-webkit-scrollbar {
+  width: 5px; }
+
+::-webkit-scrollbar-track {
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.04); }
+
+::-webkit-scrollbar-thumb {
+  cursor: pointer;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  background: #0ab5ff; }
+
+::-webkit-scrollbar-thumb:window-inactive {
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+  background: #0ab5ff; }
