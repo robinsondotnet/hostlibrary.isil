@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import modelo.Carrito;
 import modelo.CarritoItem;
-import org.apache.catalina.connector.Response;
 import proy.controladores.TiendaController;
 import proy.daos.ValidarDao;
 import proy.entidades.Empleado;
